@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=14.16",
+    "npm": ">=6.14.11"
+  },
+  "author": "Nilesh Kant",
+  "license": "MIT",
+  "name": "type-express",
+  "description": "REST API boilerplate builded with Express.js, Typescript, TypeORM and Postgres",
+  "keywords": [
+    "nodejs",
+    "express.js",
+    "typescript",
+    "typeorm",
+    "boilerplate",
+    "api",
+    "rest",
+    "restful",
+    "es2017",
+    "postgres",
+    "mysql"
+  ],
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.10",
+    "@types/helmet": "^4.0.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^8.0.29",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "husky": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "pretty-quick": "^3.1.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.1",
+    "cors": "^2.8.5",
+    "express": "^4.15.4",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.14.1",
+    "pg": "^8.4.0",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.34"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
