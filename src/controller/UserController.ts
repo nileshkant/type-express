@@ -1,5 +1,5 @@
 import { getRepository } from 'typeorm';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import { User } from '../entity/User';
 
 export class UserController {
@@ -17,8 +17,24 @@ export class UserController {
     return this.userRepository.save(request.body);
   }
 
-  async remove(request: Request) {
-    const userToRemove = await this.userRepository.findOne(request.params.id);
-    await this.userRepository.remove(userToRemove);
+  // using query builder <createQueryBuilder>
+  async remove(request: Request, response: Response) {
+    try {
+      const data = await this.userRepository
+        .createQueryBuilder()
+        .delete()
+        .from(User)
+        .where('id = :id', { id: request.params.id })
+        .execute();
+      if (data.affected === 1) {
+        response.status(204);
+        response.send('record successfully deleted');
+      } else {
+        response.status(404);
+        response.send('record not found');
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 }

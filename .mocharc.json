@@ -1,0 +1,5 @@
+{
+  "spec": ["./test/**/*.test.ts", "./test/**/*.test.js"],
+  "timeout": 5000,
+  "require": "ts-node/register"
+}

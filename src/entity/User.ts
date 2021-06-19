@@ -1,8 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { userInterface } from '../interface/User';
 
+export enum gender {
+  MALE = 'Male',
+  FEMALE = 'Female',
+  OTHER = 'Other',
+}
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
@@ -13,4 +19,19 @@ export class User {
 
   @Column()
   age: number;
+
+  @Column({
+    type: 'enum',
+    enum: gender,
+    nullable: true,
+  })
+  gender: gender;
+
+  public static mockTestBoard(): userInterface {
+    const user: User = new User();
+    user.firstName = 'Timber';
+    user.lastName = 'Saw';
+    user.age = 20;
+    return user;
+  }
 }
