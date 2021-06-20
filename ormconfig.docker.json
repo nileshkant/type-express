@@ -1,0 +1,41 @@
+[
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "db",
+    "port": 5432,
+    "username": "postgres",
+    "password": "pass",
+    "database": "test",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/entity/**/*.ts", "./build/src/entity/**/*.js"],
+    "migrations": ["src/migration/**/*.ts", "./src/entity/**/*.js"],
+    "subscribers": ["src/subscriber/**/*.ts", "./src/subscriber/**/*.js"],
+    "cli": {
+      "entitiesDir": "./build/src/entity",
+      "migrationsDir": "./build/src/migration",
+      "subscribersDir": "./build/src/subscriber"
+    }
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "db",
+    "port": 5432,
+    "username": "postgres",
+    "password": "pass",
+    "database": "test-test",
+    "synchronize": true,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/entity/**/*.ts", "./build/src/entity/**/*.js"],
+    "migrations": ["src/migration/**/*.ts", "./src/entity/**/*.js"],
+    "subscribers": ["src/subscriber/**/*.ts", "./src/subscriber/**/*.js"],
+    "cli": {
+      "entitiesDir": "./build/src/entity",
+      "migrationsDir": "./build/src/migration",
+      "subscribersDir": "./build/src/subscriber"
+    }
+  }
+]

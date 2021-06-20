@@ -1,12 +1,25 @@
 version: '3'
 services:
-
-  postgres:
-    image: "postgres:9.6.1"
+  db:
+    image: 'postgres:9.6.1'
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
-      POSTGRES_USER: "test"
-      POSTGRES_PASSWORD: "test"
-      POSTGRES_DB: "test"
-
+      PGDATA: /var/pgdata
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'pass'
+      POSTGRES_DB: 'test'
+    volumes:
+      - 'pgdata:/var/pgdata'
+  web:
+    image: type-express
+    depends_on:
+      - db
+    ports:
+      - '4000:4000'
+    command: >
+      sh -c "npm run build:start"
+    restart: on-failure:5
+volumes:
+  pgdata:
+    external: true
