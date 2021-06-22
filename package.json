@@ -70,7 +70,9 @@
     "seed:generate:win": "npm run typeormwin migration:generate -- -n 'initial' -c development",
     "seed:run:win": "npm run typeormwin migration:run -- -c development",
     "seed:generate": "npm run typeorm migration:generate -- -n 'initial' -c development",
-    "seed:run": "npm run typeorm migration:run -- -c development"
+    "seed:run": "npm run typeorm migration:run -- -c development",
+    "docker:build": "docker build -t type-express .",
+    "docker:start": "docker-compose up -d"
   },
   "husky": {
     "hooks": {
