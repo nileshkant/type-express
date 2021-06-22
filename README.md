@@ -85,4 +85,4 @@ npm run docker:start
 
 - [ ] Login with JWT authentication (e.g. - social media login)
 - [ ] Private route middleware check
-- [ ] Standred customize error code
+- [ ] Standerd customize error code
