@@ -63,7 +63,7 @@
     "build:start": "NODE_ENV=development npx ts-node build/src/index.js",
     "build": "npx tsc --project ./",
     "dev:win": "set NODE_ENV=development && nodemon start",
-    "dev": "NODE_ENV=development && nodemon start",
+    "dev": "NODE_ENV=development nodemon start",
     "test": "set NODE_ENV=test && mocha --watch --require ts-node/register",
     "typeormwin": "node --require ts-node/register node_modules\\typeorm\\cli.js",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
