@@ -4,6 +4,8 @@ import { Routes } from './routes';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import { errorHandler } from './common/errorValidation/error';
+import { NotFoundError } from './common/errorValidation/errors';
 
 export function initMiddleWare(app): void {
   app.use(cors());
@@ -13,15 +15,24 @@ export function initMiddleWare(app): void {
   app.use(morgan('combined'));
 
   Routes.forEach((route) => {
-    app[route.method](route.route, (req: Request, res: Response, next: () => void) => {
+    app[route.method](route.route, (req: Request, res: Response, next) => {
       const result = new route.controller()[route.action](req, res, next);
       if (result instanceof Promise) {
-        result.then((result) => (result !== null && result !== undefined ? res.send(result) : undefined));
+        result
+          .then((result) => (result !== null && result !== undefined ? res.send(result) : undefined))
+          .catch((err) => {
+            next(err);
+          });
       } else if (result !== null && result !== undefined) {
         res.json(result);
       }
     });
   });
+  app.all('*', (req: Request) => {
+    console.log('request url', req.url);
+    throw new NotFoundError();
+  });
+  app.use(errorHandler);
 }
 
 export class Server {
