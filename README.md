@@ -45,6 +45,17 @@ npm run docker:start
 ```
 📦type-express
  ┣ 📂src
+ ┃ ┣ 📦common
+ ┃ ┃ ┗ 📂errorValidation // custom error handler
+ ┃ ┃ ┃ ┣ 📂errors
+ ┃ ┃ ┃ ┃ ┣ 📜bad-request-error.ts
+ ┃ ┃ ┃ ┃ ┣ 📜custom-error.ts
+ ┃ ┃ ┃ ┃ ┣ 📜database-connection-error.ts
+ ┃ ┃ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┃ ┃ ┣ 📜not-authorized-error.ts
+ ┃ ┃ ┃ ┃ ┣ 📜not-found-error.ts
+ ┃ ┃ ┃ ┃ ┗ 📜request-validation-error.ts
+ ┃ ┃ ┃ ┗ 📜error.ts
  ┃ ┣ 📂controller  // data quering and business logics
  ┃ ┃ ┗ 📜UserController.ts
  ┃ ┣ 📂entity // Typeorm Schemas
@@ -85,4 +96,4 @@ npm run docker:start
 
 - [ ] Login with JWT authentication (e.g. - social media login)
 - [ ] Private route middleware check
-- [ ] Standerd customize error code
+- [ ] Standard customize error code
