@@ -94,7 +94,7 @@ npm run docker:start
 
 ## Optional Todo list (accepting PR)
 
-[x] Common custom Error handling with 404 route
-[ ] Login with JWT authentication (e.g. - social media login)
-[ ] Private route middleware check
-[ ] Standard customize error code
+- [x] Common custom Error handling with 404 route
+- [ ] Login with JWT authentication (e.g. - social media login)
+- [ ] Private route middleware check
+- [ ] Standard customize error code
