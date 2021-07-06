@@ -1,4 +1,5 @@
-![Asset 3@4x](https://user-images.githubusercontent.com/30167802/124656006-43592400-debe-11eb-9227-4a69353029c7.png =250x)
+
+<img src="https://user-images.githubusercontent.com/30167802/124656006-43592400-debe-11eb-9227-4a69353029c7.png" width="48">
 # Express.js, typeorm with postgres boilerplate
 
 ## Getting started
