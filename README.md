@@ -1,4 +1,4 @@
-![Asset 3@4x](https://user-images.githubusercontent.com/30167802/124656006-43592400-debe-11eb-9227-4a69353029c7.png) { width: 200px; }
+![Asset 3@4x =250x](https://user-images.githubusercontent.com/30167802/124656006-43592400-debe-11eb-9227-4a69353029c7.png)
 # Express.js, typeorm with postgres boilerplate
 
 ## Getting started
