@@ -98,4 +98,4 @@ npm run docker:start
 - [x] Common custom Error handling with 404 route
 - [ ] Login with JWT authentication (e.g. - social media login)
 - [ ] Private route middleware check
-- [ ] Standard customize error code
+- [x] Standard customize error code
