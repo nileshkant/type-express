@@ -1,5 +1,5 @@
 # <img src="https://user-images.githubusercontent.com/30167802/124656006-43592400-debe-11eb-9227-4a69353029c7.png" width="48"> Express.js, typeorm with postgres boilerplate
-[<img width="545" alt="bmc-button" src="https://user-images.githubusercontent.com/30167802/128463422-7872c236-95a4-437f-8c9e-d008ab415b8f.png">](https://www.buymeacoffee.com/nileshkant)
+[<img height="70" alt="bmc-button" src="https://user-images.githubusercontent.com/30167802/128463422-7872c236-95a4-437f-8c9e-d008ab415b8f.png">](https://www.buymeacoffee.com/nileshkant)
 ## Getting started
 
 ```
