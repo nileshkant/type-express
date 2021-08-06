@@ -1,4 +1,3 @@
-
 # <img src="https://user-images.githubusercontent.com/30167802/124656006-43592400-debe-11eb-9227-4a69353029c7.png" width="48"> Express.js, typeorm with postgres boilerplate
 
 ## Getting started
@@ -6,6 +5,13 @@
 ```
 npm install
 npm run dev
+```
+
+Using yarn
+
+```
+yarn
+yarn run dev
 ```
 
 ### Using docker
@@ -38,6 +44,11 @@ npm run docker:start
 - Linting with [ESLint](https://eslint.org/)
 - Prettier code formatter
 - Git hooks with [Husky](https://typicode.github.io/husky/#/) and lint-staged
+- Common custom Error handling with 404 route
+- Standard customize error code
+- Upload files using [multer](https://www.npmjs.com/package/multer)
+- [Cloudinary](https://cloudinary.com/) api integrated
+- Route parameters validation check before navigating to route
 
 ---
 
@@ -95,7 +106,5 @@ npm run docker:start
 
 ## Optional Todo list (accepting PR)
 
-- [x] Common custom Error handling with 404 route
 - [ ] Login with JWT authentication (e.g. - social media login)
 - [ ] Private route middleware check
-- [x] Standard customize error code
