@@ -1,6 +1,15 @@
+import { RouteInterface } from '../';
 import { UserController } from '../../controller/UserController';
 
-export const Routes = [
+// upload file using multer like this
+// import multer from 'multer';
+// const fileUpload = multer();
+
+interface UserRoutesInterface extends RouteInterface {
+  controller: typeof UserController;
+}
+
+export const UserRoutes: UserRoutesInterface[] = [
   {
     method: 'get',
     route: '/users',
@@ -18,6 +27,8 @@ export const Routes = [
     route: '/users',
     controller: UserController,
     action: 'save',
+    // pass uploadType to the controller
+    // uploadType: fileUpload.array('file', 10),
   },
   {
     method: 'delete',

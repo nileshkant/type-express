@@ -1,10 +1,12 @@
 import { getRepository } from 'typeorm';
 import { Request, Response } from 'express';
 import { User } from '../entity/User';
+import { NotFoundError } from '../common/errorValidation/errors';
+
+// import { streamUpload } from '../utils/mediaUpload';
 
 export class UserController {
   private userRepository = getRepository(User);
-
   async all() {
     return this.userRepository.find();
   }
@@ -14,7 +16,13 @@ export class UserController {
   }
 
   async save(request: Request) {
-    return this.userRepository.save(request.body);
+    try {
+      // if uploading a file
+      // const mediaUpload = await streamUpload(request);
+      return this.userRepository.save(request.body);
+    } catch (err) {
+      throw err;
+    }
   }
 
   // using query builder <createQueryBuilder>
@@ -27,14 +35,12 @@ export class UserController {
         .where('id = :id', { id: request.params.id })
         .execute();
       if (data.affected === 1) {
-        response.status(204);
-        response.send('record successfully deleted');
+        return 'record successfully deleted';
       } else {
-        response.status(404);
-        response.send('record not found');
+        throw new NotFoundError();
       }
     } catch (err) {
-      console.log(err);
+      throw err;
     }
   }
 }
